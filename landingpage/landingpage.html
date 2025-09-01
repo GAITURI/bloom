@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom - Ubuntu Bloom</title>
+    <link rel="stylesheet" href="style.css"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="relative">
+
+    <!-- Background Image with Opacity -->
+    <div class="bg-image"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Navbar -->
+        <header class="flex items-center justify-between py-6">
+            <div class="flex items-center space-x-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 11.2V12.8H7.2V11.2H12ZM14.8 12.8V11.2H16.4V12.8H14.8ZM12 6.4V17.6H12V6.4ZM12 17.6H14.8V12.8H12ZM12 11.2V6.4H12V11.2ZM12 17.6V12.8H9.2V17.6H12Z" fill="#7d3c99"/>
+                </svg>
+                <span class="font-bold text-lg">Bloom</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="../loginpage/login.html" class="bg-purple-600 text-white py-2 px-6 rounded-full hover:bg-purple-800 active:bg-purple-800 transition duration-300">Login</a>
+                <a href="../registrationpage/reg.html" class="bg-purple-600 text-white py-2 px-6 rounded-full hover:bg-purple-800 active:bg-purple-800 transition duration-300">Sign Up</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-800 focus:outline-none" title="Open menu">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <main class="flex flex-col items-center justify-center text-center mt-24 sm:mt-32 lg:mt-48">
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-purple-800 leading-tight tracking-tight drop-shadow-lg">
+                Ubuntu Bloom
+            </h1>
+            <p class="mt-6 max-w-2xl text-xl text-gray-700 leading-relaxed drop-shadow-sm">
+                Nurturing mental wellness within Africa's LGBTQ+ community. Your safe space to reflect, connect, and grow.
+            </p>
+            <a href="../dashboardpage/dashboard.html" class="mt-8 flex items-center bg-purple-600 text-white py-3 px-8 rounded-full font-medium shadow-lg hover:bg-purple-700 transition duration-300">
+                Begin Your Journey
+                <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.5 14L21 17.5M21 17.5L17.5 21M21 17.5H3" />
+                </svg>
+            </a>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-6 mt-20 text-center">
+        <p class="text-gray-600 text-sm">© 2025 Ubuntu Bloom. All rights reserved.</p>
+        <div class="mt-2 text-sm space-x-4">
+            <a href="#" class="text-gray-600 hover:text-purple-600 transition duration-300">Terms of Service</a>
+            <span class="text-gray-400">|</span>
+            <a href="#" class="text-gray-600 hover:text-purple-600 transition duration-300">Privacy</a>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

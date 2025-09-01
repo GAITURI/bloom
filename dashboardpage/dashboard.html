@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body class="flex flex-col md:flex-row min-h-screen">
+    <!-- Background image -->
+    <div class="bg-image"></div>
+    
+    <!-- Mobile Header -->
+    <div class="md:hidden flex items-center justify-between p-4 bg-white shadow-md z-20">
+        <div class="flex items-center space-x-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 11.2V12.8H7.2V11.2H12ZM14.8 12.8V11.2H16.4V12.8H14.8ZM12 6.4V17.6H12V6.4ZM12 17.6H14.8V12.8H12ZM12 11.2V6.4H12V11.2ZM12 17.6V12.8H9.2V17.6H12Z" fill="#7d3c99"/>
+            </svg>
+            <span class="font-bold text-lg text-purple-800">Ubuntu Bloom</span>
+        </div>
+        <button id="hamburger-menu" class="text-gray-800 focus:outline-none" title="Open menu">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar fixed inset-y-0 left-0 bg-white md:relative md:flex flex-col w-64 shadow-lg p-6 z-20">
+        <div class="flex-shrink-0 flex items-center justify-between md:justify-start">
+            <div class="flex items-center space-x-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 11.2V12.8H7.2V11.2H12ZM14.8 12.8V11.2H16.4V12.8H14.8ZM12 6.4V17.6H12V6.4ZM12 17.6H14.8V12.8H12ZM12 11.2V6.4H12V11.2ZM12 17.6V12.8H9.2V17.6H12Z" fill="#7d3c99"/>
+                </svg>
+                <span class="font-bold text-xl text-purple-800">Ubuntu Bloom</span>
+            </div>
+            <button id="close-menu" class="md:hidden text-gray-800" title="Close menu">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="mt-8 flex-grow">
+            <ul class="space-y-4">
+                <li>
+                    <a href="#" id="journal-link" class="flex items-center p-3 rounded-lg hover:bg-purple-100 transition duration-300">
+                        <svg class="w-6 h-6 mr-3 nav-icon text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                        <span class="font-medium">Journal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="trends-link" class="flex items-center p-3 rounded-lg hover:bg-purple-100 transition duration-300">
+                        <svg class="w-6 h-6 mr-3 nav-icon text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h-6M13 17h-6M13 12h-6M17 12a2 2 0 100-4 2 2 0 000 4zM17 12a2 2 0 100 4 2 2 0 000-4zM21 12h-4M7 12h4m-4 0a2 2 0 100-4 2 2 0 000 4z" />
+                        </svg>
+                        <span class="font-medium">Trends</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="community-link" class="flex items-center p-3 rounded-lg hover:bg-purple-100 transition duration-300">
+                        <svg class="w-6 h-6 mr-3 nav-icon text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5m-5 0a2 2 0 100-4m0 4a2 2 0 110-4m-2 2a2 2 0 11-4 0m4 0a2 2 0 100 4m-2-2a2 2 0 100 4m-2 2a2 2 0 100-4M5 20h-5m5 0a2 2 0 100-4m0 4a2 2 0 110-4m2 2a2 2 0 11-4 0m4 0a2 2 0 100 4m-2-2a2 2 0 100 4m-2 2a2 2 0 100-4"></path>
+                        </svg>
+                        <span class="font-medium">Community</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="resources-link" class="flex items-center p-3 rounded-lg hover:bg-purple-100 transition duration-300">
+                        <svg class="w-6 h-6 mr-3 nav-icon text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.5a.5.5 0 100-1 .5.5 0 000 1zM18 10a.5.5 0 100-1 .5.5 0 000 1zM6 10a.5.5 0 100-1 .5.5 0 000 1zM20 17a.5.5 0 100-1 .5.5 0 000 1zM4 17a.5.5 0 100-1 .5.5 0 000 1z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13a4.5 4.5 0 100-9 4.5 4.5 0 000 9zM12 13a4.5 4.5 0 100-9 4.5 4.5 0 000 9zM12 22a.5.5 0 100-1 .5.5 0 000 1zM18 19a.5.5 0 100-1 .5.5 0 000 1zM6 19a.5.5 0 100-1 .5.5 0 000 1z" />
+                        </svg>
+                        <span class="font-medium">Resources</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="affirmations-link" class="flex items-center p-3 rounded-lg hover:bg-purple-100 transition duration-300">
+                        <svg class="w-6 h-6 mr-3 nav-icon text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v5m0 0v-5m0 5h5m-5 0h-5m-7 0a2 2 0 100-4 2 2 0 000 4zm2 2a2 2 0 100-4 2 2 0 000 4zm-2 2a2 2 0 100-4 2 2 0 000 4zm4-4a2 2 0 100-4 2 2 0 000 4zm-2 2a2 2 0 100-4 2 2 0 000 4z" />
+                        </svg>
+                        <span class="font-medium">Affirmations</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="mt-auto pt-6 border-t border-gray-200">
+            <div class="flex items-center space-x-3">
+                <img src="https://placehold.co/40x40/7d3c99/ffffff?text=U" alt="User Profile" class="rounded-full">
+                <div>
+                    <p class="font-semibold text-gray-800">User Name</p>
+                    <p class="text-sm text-gray-600">user@email.com</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 md:p-10 z-10">
+        <div id="content-area" class="bg-white rounded-3xl shadow-lg p-6 md:p-10 min-h-[calc(100vh-10rem)] md:min-h-full">
+            <!-- This area will be dynamically updated by dashboard.js -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js" type="module"></script>
+</body>
+</html>
